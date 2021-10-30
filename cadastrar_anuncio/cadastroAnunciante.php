@@ -1,3 +1,6 @@
+<?php
+$restanteNumeros = 500;
+?>
 <!DOCTYPE HTML>
 <html lang="pt-br">
 
@@ -36,21 +39,21 @@
                     <input type="text" name="endereço" placeholder="Digite aqui sua rua" required>
                 </div>
                 <div class="tes">
-                    <label>Número</label>
+                    <label>Número*</label>
                     <input type="text" name="numero" placeholder="" required>
                 </div>
             </div>
             <div class="card-group cb">
                 <div class="city">
-                    <label>Cidade <br></label>
+                    <label>Cidade* <br></label>
                     <input type="text" name="cidade" placeholder="Digite sua cidade" required>
                 </div>
                 <div class="bairro">
-                    <label>Bairro <br></label>
+                    <label>Bairro* <br></label>
                     <input type="text" name="bairro" placeholder="Digite seu bairro" required>
                 </div>
                 <div class="cep">
-                    <label>CEP <br></label>
+                    <label>CEP* <br></label>
                     <input type="text" name="CEP" placeholder="Digite seu CEP" required>
                 </div>
             </div>
@@ -59,7 +62,7 @@
                 <input type="text" name="CEP" placeholder="Digite algum ponto de referencia.">
             </div>
             <div class="card-group">
-                <label for="exampleFormControlSelect1">Quantidade de quartos</label>
+                <label for="exampleFormControlSelect1">Quantidade de quartos*</label>
                 <select class="form-control" id="exampleFormControlSelect1">
                     <option>1</option>
                     <option>2</option>
@@ -74,7 +77,7 @@
                 </select>
             </div>
             <div class="card-group">
-                <label for="exampleFormControlSelect1">Quantidade de banheiros</label>
+                <label for="exampleFormControlSelect1">Quantidade de banheiros*</label>
                 <select class="form-control" id="exampleFormControlSelect2">
                     <option>1 </option>
                     <option>2 </option>
@@ -84,23 +87,22 @@
                 </select>
             </div>
             <div class="card-group">
-                <label>Imagens do imóvel</label>
+                <label>Imagens do imóvel*</label>
                 <input type="file" class="form-control-file" id="exampleFormControlFile1" required>
             </div>
 
             <div class="card-group">
-                <label>Titulo do seu anúncio</label>
-                <input class="test" type="text" name="cpf" placeholder="Digite um titulo para seu anúncio" required>
+                <label>Titulo do seu anúncio*</label>
+                <input class="test"  type="text" name="cpf" placeholder="Digite um titulo para seu anúncio" required>
             </div>
 
             <div class="card-group ">
-                <label>Descrição do imóvel</label>
-                <textarea rows="6" cols="87" name="descricao" placeholder="Digite aqui uma breve descrição do imóvel"
-                    required> </textarea>
+                <label>Descrição do imóvel*</label>
+                <textarea rows="6" cols="87"   name="descricao" placeholder="Digite aqui uma breve descrição do imóvel"  required></textarea>
             </div>
 
             <div class="card-group">
-                <label>Valor do imóvel</label>
+                <label>Valor do imóvel*</label>
                 <input type="text" name="cpf" placeholder="R$" required>
             </div>
             <div class="card-group btn">
