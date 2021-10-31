@@ -5,8 +5,7 @@ body {
 
 form {
     width: 750px;
-    margin: auto;
-    padding-top: 40px;
+    margin: 40px auto;
 }
 
 .card {
@@ -61,6 +60,7 @@ form {
 
 .imgCadastro {
     border-radius: 20px;
+    margin: auto;
     width: 80px;
 }
 
@@ -107,10 +107,12 @@ form {
     width: 120px;
 }
 textarea {
+    width: 100%;
     resize: none;
     border-radius: 5px;
-    border: 2px solid;
+    border: 1px solid rgb(184, 177, 177);
     color:black;
+    text-indent: 2px;
 }
 .selecionar{
     width: 30%;
@@ -124,4 +126,8 @@ textarea {
    display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.card-group .form-control-file {
+    height: 40px;
 }

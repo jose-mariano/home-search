@@ -1,22 +1,40 @@
-<?php
-$restanteNumeros = 500;
-?>
-<!DOCTYPE HTML>
-<html lang="pt-br">
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-
     <meta charset="UTF-8">
-    <meta name="viewport" content="width-device-width, initial-scale-1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Cadastro do Anunciante</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="css/cadastroAnunciante.css">
+    <title>Novo Anúncio</title>
+
+    <link rel="icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/novoAnuncio.css">
 
 </head>
-
-<body>
-
+<body class="bg-gray-300">
+    <!-- HEADER -->
+    <header>
+        <div class="flex flex-1 relative bg-gray-700 w-full h-24">
+            <!-- LOGO -->
+            <div>
+                <a href="index.php">
+                    <img src="img/logo.png" alt="Logo Homesearch" class="w-70 ml-4 mt-5">
+                </a>
+            </div>
+            <!-- BOTAO -->
+            <div class="items-end flex-1 text-white text-2xl my-3">
+                <nav class="flex-1">
+                    <ul class="flex justify-end flex-1">
+                        <li class="p-5">
+                            <a href="index.php" class="hover:bg-blue-500 p-3 rounded-full">Sair</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!-- LOGIN -->
     <form class="form" action="#">
         <div class="card">
             <div class="card-top">
@@ -24,7 +42,7 @@ $restanteNumeros = 500;
                 <h2 class="title">Cadastre seu imóvel</h2>
             </div class="select">
             <div class="card-group">
-                <label> Oque gostaria de fazer com seu imóvel?</label>
+                <label> O que gostaria de fazer com seu imóvel?</label>
                 <selecionar>
                     <label for="nome">Alugar</label>
                     <input type="radio" name="nome" id="nome">
@@ -40,7 +58,7 @@ $restanteNumeros = 500;
                 </div>
                 <div class="tes">
                     <label>Número*</label>
-                    <input type="text" name="numero" placeholder="" required>
+                    <input type="text" name="numero" placeholder="Ex: 15" required>
                 </div>
             </div>
             <div class="card-group cb">
@@ -110,8 +128,8 @@ $restanteNumeros = 500;
             </div>
         </div>
 
-        <body link="grey">
-
             </div>
     </form>
+
 </body>
+</html>

@@ -35,10 +35,12 @@
         <img src="img/banner.png" class="relative" alt="Banner Principal">
         <!-- BOTAO ANUNCIOS ATIVOS/INATIVOS -->
         <div class="flex flex-1 w-full absolute justify-center self-center">
-            <button class="inline-block w-72 h-20 text-2xl text-white bg-gray-700 mr-10 rounded-full hover:bg-blue-500">
-                <img src="img/add.png" class="w-10 pb-1 inline-block" alt="Anunciar">
-                Anunciar
-            </button>
+            <a href="novoAnuncio.php">
+                <button class="inline-block w-72 h-20 text-2xl text-white bg-gray-700 mr-10 rounded-full hover:bg-blue-500">
+                    <img src="img/add.png" class="w-10 pb-1 inline-block" alt="Anunciar">
+                    Novo Anúncio
+                </button>
+            </a>
             <button class="inline-block w-72 h-20 text-2xl text-white bg-gray-700 ml-10 rounded-full hover:bg-blue-500">
             <img src="img/anuncios.png" class="w-10 pb-1 inline-block" alt="Anunciar">
                 Meus Anúncios
