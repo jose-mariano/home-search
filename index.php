@@ -26,7 +26,7 @@
                             <a href="" class="hover:bg-blue-500 p-3 rounded-full">Anunciar</a>
                         </li>
                         <li class="p-5">
-                            <a href="" class="hover:bg-blue-500 p-3 rounded-full">Área do Anunciante</a>
+                            <a href="anunciante.php" class="hover:bg-blue-500 p-3 rounded-full">Área do Anunciante</a>
                         </li>
                     </ul>
                 </nav>
@@ -46,65 +46,65 @@
     <div class="flex flex-wrap justify-center">
         <div class="w-96 bg-white rounded-3xl flex-col p-5 m-1.5 my-5">
             <img src="img/imovel1.png" alt="Imovel 2" class="w-96 p-5 rounded-3xl">
-            <h1 class="p-5 font-bold">Sobrado em Alphaville, Barueri, SP</h1>
-            <h2 class="p-5 font-semibold">R$ 2.000.000,00</h2>
-            <p class="font-light p-5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi, eaque temporibus repudiandae vel minima ipsum! Suscipit eveniet soluta dolorum aspernatur in placeat quibusdam non iusto praesentium, libero quae perferendis consequatur.</p>
+            <h1 class="p-5 text-lg font-bold">Sobrado em Alphaville, Barueri, SP</h1>
+            <h2 class="p-5 text-lg font-semibold">R$ 2.000.000,00</h2>
+            <p class="font-light text-lg p-5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi, eaque temporibus repudiandae vel minima ipsum! Suscipit eveniet soluta dolorum aspernatur in placeat quibusdam non iusto praesentium, libero quae perferendis consequatur.</p>
             <a href="" class="w-40 p-1.5 m-8 text-white bg-gray-700 hover:bg-blue-500 rounded-2xl">
                 <img src="img/favicon.png" class="w-9 inline-block" alt="Mais Detalhes">Clique para mais detalhes</a>
         </div>
         <div class="w-96 bg-white rounded-3xl flex-col p-5 m-1.5 my-5">
             <img src="img/imovel2.png" alt="Imovel 2" class="w-96 p-5 rounded-3xl">
-            <h1 class="p-5 font-bold">Sobrado em Alphaville, Barueri, SP</h1>
-            <h2 class="p-5 font-semibold">R$ 2.000.000,00</h2>
-            <p class="font-light p-5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi, eaque temporibus repudiandae vel minima ipsum! Suscipit eveniet soluta dolorum aspernatur in placeat quibusdam non iusto praesentium, libero quae perferendis consequatur.</p>
+            <h1 class="p-5 text-lg font-bold">Sobrado em Alphaville, Barueri, SP</h1>
+            <h2 class="p-5 text-lg font-semibold">R$ 2.000.000,00</h2>
+            <p class="font-light text-lg p-5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi, eaque temporibus repudiandae vel minima ipsum! Suscipit eveniet soluta dolorum aspernatur in placeat quibusdam non iusto praesentium, libero quae perferendis consequatur.</p>
             <a href="" class="w-40 p-1.5 m-8 text-white bg-gray-700 hover:bg-blue-500 rounded-2xl">
                 <img src="img/favicon.png" class="w-9 inline-block" alt="Mais Detalhes">Clique para mais detalhes</a>
         </div>
         <div class="w-96 bg-white rounded-3xl flex-col p-5 m-1.5 my-5">
             <img src="img/imovel3.png" alt="Imovel 2" class="w-96 p-5 rounded-3xl">
-            <h1 class="p-5 font-bold">Sobrado em Alphaville, Barueri, SP</h1>
-            <h2 class="p-5 font-semibold">R$ 2.000.000,00</h2>
-            <p class="font-light p-5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi, eaque temporibus repudiandae vel minima ipsum! Suscipit eveniet soluta dolorum aspernatur in placeat quibusdam non iusto praesentium, libero quae perferendis consequatur.</p>
+            <h1 class="p-5 text-lg font-bold">Sobrado em Alphaville, Barueri, SP</h1>
+            <h2 class="p-5 text-lg font-semibold">R$ 2.000.000,00</h2>
+            <p class="font-light text-lg p-5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi, eaque temporibus repudiandae vel minima ipsum! Suscipit eveniet soluta dolorum aspernatur in placeat quibusdam non iusto praesentium, libero quae perferendis consequatur.</p>
             <a href="" class="w-40 p-1.5 m-8 text-white bg-gray-700 hover:bg-blue-500 rounded-2xl">
                 <img src="img/favicon.png" class="w-9 inline-block" alt="Mais Detalhes">Clique para mais detalhes</a>
         </div>
         <div class="w-96 bg-white rounded-3xl flex-col p-5 m-1.5 my-5">
             <img src="img/imovel4.png" alt="Imovel 2" class="w-96 p-5 rounded-3xl">
-            <h1 class="p-5 font-bold">Sobrado em Alphaville, Barueri, SP</h1>
-            <h2 class="p-5 font-semibold">R$ 2.000.000,00</h2>
-            <p class="font-light p-5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi, eaque temporibus repudiandae vel minima ipsum! Suscipit eveniet soluta dolorum aspernatur in placeat quibusdam non iusto praesentium, libero quae perferendis consequatur.</p>
+            <h1 class="p-5 text-lg font-bold">Sobrado em Alphaville, Barueri, SP</h1>
+            <h2 class="p-5 text-lg font-semibold">R$ 2.000.000,00</h2>
+            <p class="font-light text-lg p-5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi, eaque temporibus repudiandae vel minima ipsum! Suscipit eveniet soluta dolorum aspernatur in placeat quibusdam non iusto praesentium, libero quae perferendis consequatur.</p>
             <a href="" class="w-40 p-1.5 m-8 text-white bg-gray-700 hover:bg-blue-500 rounded-2xl">
                 <img src="img/favicon.png" class="w-9 inline-block" alt="Mais Detalhes">Clique para mais detalhes</a>
         </div>
         <div class="w-96 bg-white rounded-3xl flex-col p-5 m-1.5 my-5">
             <img src="img/imovel5.png" alt="Imovel 2" class="w-96 p-5 rounded-3xl">
-            <h1 class="p-5 font-bold">Sobrado em Alphaville, Barueri, SP</h1>
-            <h2 class="p-5 font-semibold">R$ 2.000.000,00</h2>
-            <p class="font-light p-5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi, eaque temporibus repudiandae vel minima ipsum! Suscipit eveniet soluta dolorum aspernatur in placeat quibusdam non iusto praesentium, libero quae perferendis consequatur.</p>
+            <h1 class="p-5 text-lg font-bold">Sobrado em Alphaville, Barueri, SP</h1>
+            <h2 class="p-5 text-lg font-semibold">R$ 2.000.000,00</h2>
+            <p class="font-light text-lg p-5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi, eaque temporibus repudiandae vel minima ipsum! Suscipit eveniet soluta dolorum aspernatur in placeat quibusdam non iusto praesentium, libero quae perferendis consequatur.</p>
             <a href="" class="w-40 p-1.5 m-8 text-white bg-gray-700 hover:bg-blue-500 rounded-2xl">
                 <img src="img/favicon.png" class="w-9 inline-block" alt="Mais Detalhes">Clique para mais detalhes</a>
         </div>
         <div class="w-96 bg-white rounded-3xl flex-col p-5 m-1.5 my-5">
             <img src="img/imovel6.png" alt="Imovel 2" class="w-96 p-5 rounded-3xl">
-            <h1 class="p-5 font-bold">Sobrado em Alphaville, Barueri, SP</h1>
-            <h2 class="p-5 font-semibold">R$ 2.000.000,00</h2>
-            <p class="font-light p-5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi, eaque temporibus repudiandae vel minima ipsum! Suscipit eveniet soluta dolorum aspernatur in placeat quibusdam non iusto praesentium, libero quae perferendis consequatur.</p>
+            <h1 class="p-5 text-lg font-bold">Sobrado em Alphaville, Barueri, SP</h1>
+            <h2 class="p-5 text-lg font-semibold">R$ 2.000.000,00</h2>
+            <p class="font-light text-lg p-5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi, eaque temporibus repudiandae vel minima ipsum! Suscipit eveniet soluta dolorum aspernatur in placeat quibusdam non iusto praesentium, libero quae perferendis consequatur.</p>
             <a href="" class="w-40 p-1.5 m-8 text-white bg-gray-700 hover:bg-blue-500 rounded-2xl">
                 <img src="img/favicon.png" class="w-9 inline-block" alt="Mais Detalhes">Clique para mais detalhes</a>
         </div>
         <div class="w-96 bg-white rounded-3xl flex-col p-5 m-1.5 my-5">
             <img src="img/imovel7.png" alt="Imovel 2" class="w-96 p-5 rounded-3xl">
-            <h1 class="p-5 font-bold">Sobrado em Alphaville, Barueri, SP</h1>
-            <h2 class="p-5 font-semibold">R$ 2.000.000,00</h2>
-            <p class="font-light p-5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi, eaque temporibus repudiandae vel minima ipsum! Suscipit eveniet soluta dolorum aspernatur in placeat quibusdam non iusto praesentium, libero quae perferendis consequatur.</p>
+            <h1 class="p-5 text-lg font-bold">Sobrado em Alphaville, Barueri, SP</h1>
+            <h2 class="p-5 text-lg font-semibold">R$ 2.000.000,00</h2>
+            <p class="font-light text-lg p-5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi, eaque temporibus repudiandae vel minima ipsum! Suscipit eveniet soluta dolorum aspernatur in placeat quibusdam non iusto praesentium, libero quae perferendis consequatur.</p>
             <a href="" class="w-40 p-1.5 m-8 text-white bg-gray-700 hover:bg-blue-500 rounded-2xl">
                 <img src="img/favicon.png" class="w-9 inline-block" alt="Mais Detalhes">Clique para mais detalhes</a>
         </div>
         <div class="w-96 bg-white rounded-3xl flex-col p-5 m-1.5 my-5">
             <img src="img/imovel8.png" alt="Imovel 2" class="w-96 p-5 rounded-3xl">
-            <h1 class="p-5 font-bold">Sobrado em Alphaville, Barueri, SP</h1>
-            <h2 class="p-5 font-semibold">R$ 2.000.000,00</h2>
-            <p class="font-light p-5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi, eaque temporibus repudiandae vel minima ipsum! Suscipit eveniet soluta dolorum aspernatur in placeat quibusdam non iusto praesentium, libero quae perferendis consequatur.</p>
+            <h1 class="p-5 text-lg font-bold">Sobrado em Alphaville, Barueri, SP</h1>
+            <h2 class="p-5 text-lg font-semibold">R$ 2.000.000,00</h2>
+            <p class="font-light text-lg p-5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi, eaque temporibus repudiandae vel minima ipsum! Suscipit eveniet soluta dolorum aspernatur in placeat quibusdam non iusto praesentium, libero quae perferendis consequatur.</p>
             <a href="" class="w-40 p-1.5 m-8 text-white bg-gray-700 hover:bg-blue-500 rounded-2xl">
                 <img src="img/favicon.png" class="w-9 inline-block" alt="Mais Detalhes">Clique para mais detalhes</a>
         </div>
