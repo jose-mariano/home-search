@@ -23,7 +23,7 @@
                 <nav class="flex-1">
                     <ul class="flex justify-end flex-1">
                         <li class="p-5">
-                            <a href="" class="hover:bg-blue-500 p-3 rounded-full">Sair</a>
+                            <a href="index.php" class="hover:bg-blue-500 p-3 rounded-full">Sair</a>
                         </li>
                     </ul>
                 </nav>

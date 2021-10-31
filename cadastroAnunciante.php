@@ -22,27 +22,32 @@
             </div>
 
             <div class="card-group">
-                <label>Nome</label>
+                <label>Nome*</label>
             <input type="text" name="nome" placeholder="Digite seu Nome" required>      
             </div>
 
             <div class="card-group">
-                <label>Email</label>
+                <label>Email*</label>
             <input type="email" name="email" placeholder="exemplo@gmail.com" required>      
             </div>
 
             <div class="card-group">
-                <label>Senha</label>
+                <label>Senha*</label>
             <input type="password" name="senha" placeholder="Digite sua senha" required>      
             </div>
 
             <div class="card-group">
-                <label>CPF</label>
+                <label>Confirmar Senha*</label>
+            <input type="password" name="senha" placeholder="Digite sua senha novamente" required>      
+            </div>
+
+            <div class="card-group">
+                <label>CPF*</label>
             <input type="text" name="cpf" placeholder="Digite seu CPF" required>      
             </div>
 
             <div class="card-group cel">
-                <label>Celular</label>
+                <label>Celular*</label>
             <input type="tel" name="cpf" placeholder="Digite seu número para contato" required>      
             </div>
 
