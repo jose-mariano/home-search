@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,9 +7,9 @@
 
     <title>Login</title>
 
-    <link rel="icon" href="img/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="css/login.css">
-    <link rel="stylesheet" href="css/loginAnunciante.css">
+    <link rel="icon" href="public/img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="public/css/login.css">
+    <link rel="stylesheet" href="public/css/loginAnunciante.css">
 
 </head>
 <body class="bg-gray-300">
@@ -19,7 +19,7 @@
             <!-- LOGO -->
             <div>
                 <a href="index.php">
-                    <img src="img/logo.png" alt="Logo Homesearch" class="w-70 ml-4 mt-5">
+                    <img src="public/img/logo.png" alt="Logo Homesearch" class="w-70 ml-4 mt-5">
                 </a>
             </div>
         </div>
@@ -28,7 +28,7 @@
     <form class="form" action="#">
         <div class="card">
             <div class="card-top">
-                <img class="imglogin" src="img/login3.jpg" alt="">
+                <img class="imglogin" src="public/img/login3.jpg" alt="">
                 <h2 class="title">Painel de Controle</h2>
             </div>
 

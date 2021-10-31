@@ -7,9 +7,9 @@
 
     <title>Novo Anúncio</title>
 
-    <link rel="icon" href="img/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="css/login.css">
-    <link rel="stylesheet" href="css/novoAnuncio.css">
+    <link rel="icon" href="public/img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="public/css/login.css">
+    <link rel="stylesheet" href="public/css/novoAnuncio.css">
 
 </head>
 <body class="bg-gray-300">
@@ -19,7 +19,7 @@
             <!-- LOGO -->
             <div>
                 <a href="index.php">
-                    <img src="img/logo.png" alt="Logo Homesearch" class="w-70 ml-4 mt-5">
+                    <img src="public/img/logo.png" alt="Logo Homesearch" class="w-70 ml-4 mt-5">
                 </a>
             </div>
             <!-- BOTAO -->
@@ -38,7 +38,7 @@
     <form class="form" action="#">
         <div class="card">
             <div class="card-top">
-                <img class="imgCadastro" src="img/corretor-de-imoveis.png" alt="">
+                <img class="imgCadastro" src="public/img/corretor-de-imoveis.png" alt="">
                 <h2 class="title">Cadastre seu imóvel</h2>
             </div class="select">
             <div class="card-group">

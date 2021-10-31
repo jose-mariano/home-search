@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Painel do administrador</title>
 
-    <link rel="stylesheet" href="css/loginAnunciante.css">
+    <link rel="stylesheet" href="../public/css/admin_login.css">
 
 </head>
 
@@ -15,7 +15,7 @@
     <form class="form" action="#">
         <div class="card">
             <div class="card-top">
-                <img class="imglogin" src="images/aaa.png" alt="">
+                <img class="imglogin" src="../public/img/engrenagem.png" alt="">
                 <h2 class="title">Painel do administrador</h2>
             </div>
 

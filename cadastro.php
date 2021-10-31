@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Login</title>
+    <title>Cadastro</title>
 
-    <link rel="icon" href="img/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="css/login.css">
-    <link rel="stylesheet" href="css/cadastroAnunciante.css">
+    <link rel="icon" href="public/img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="public/css/login.css">
+    <link rel="stylesheet" href="public/css/cadastroAnunciante.css">
 
 </head>
 <body class="bg-gray-300">
@@ -19,7 +19,7 @@
             <!-- LOGO -->
             <div>
                 <a href="index.php">
-                    <img src="img/logo.png" alt="Logo Homesearch" class="w-70 ml-4 mt-5">
+                    <img src="public/img/logo.png" alt="Logo Homesearch" class="w-70 ml-4 mt-5">
                 </a>
             </div>
         </div>
@@ -28,7 +28,7 @@
     <form class="form" action="#">
     <div class="card">
             <div class="card-top">
-                <img class="imgCadastro" src="img/corretor-de-imoveis.png" alt="">
+                <img class="imgCadastro" src="public/img/corretor-de-imoveis.png" alt="">
                 <h2 class="title">Cadastro do Anunciante</h2>
                 <p>Complete suas informações</p>
             </div>
