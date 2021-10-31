@@ -23,7 +23,7 @@
                 <nav class="flex-1">
                     <ul class="flex justify-end flex-1">
                         <li class="p-5">
-                            <a href="" class="hover:bg-blue-500 p-3 rounded-full">Anunciar</a>
+                            <a href="cadastro.php" class="hover:bg-blue-500 p-3 rounded-full">Anunciar</a>
                         </li>
                         <li class="p-5">
                             <a href="anunciante.php" class="hover:bg-blue-500 p-3 rounded-full">Área do Anunciante</a>

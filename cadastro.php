@@ -1,18 +1,30 @@
-<!DOCTYPE HTML>
-<html lang="pt-br">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-
     <meta charset="UTF-8">
-    <meta name="viewport" content="width-device-width, initial-scale-1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Cadastro do Anunciante</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Login</title>
+
+    <link rel="icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="css/cadastroAnunciante.css">
 
 </head>
-
-<body>
-    
+<body class="bg-gray-300">
+    <!-- HEADER -->
+    <header>
+        <div class="flex flex-1 relative bg-gray-700 w-full h-24">
+            <!-- LOGO -->
+            <div>
+                <a href="index.php">
+                    <img src="img/logo.png" alt="Logo Homesearch" class="w-70 ml-4 mt-5">
+                </a>
+            </div>
+        </div>
+    </header>
+    <!-- LOGIN -->
     <form class="form" action="#">
     <div class="card">
             <div class="card-top">
@@ -56,11 +68,11 @@
             </div>
 
             <div class="conta">
-                <p>Já tem uma conta? <a href="loginAnunciante.php">Faça o login</a></p>
+                <p>Já tem uma conta? <a href="login.php">Faça o login</a></p>
             </div>
-
-            <body link="grey">
 
     </div>
     </form>
+
 </body>
+</html>
