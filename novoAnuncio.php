@@ -35,7 +35,7 @@
         </div>
     </header>
     <!-- LOGIN -->
-    <form class="form" action="#">
+    <form class="form" action="novoAnuncio.php" method="POST" enctype="multipart/form-data">
         <div class="card">
             <div class="card-top">
                 <img class="imgCadastro" src="public/img/corretor-de-imoveis.png" alt="">
@@ -105,8 +105,8 @@
                 </select>
             </div>
             <div class="card-group">
-                <label>Imagens do imóvel*</label>
-                <input type="file" class="form-control-file" id="exampleFormControlFile1" required>
+                <label>Imagem do imóvel*</label>
+                <input type="file" name="imagemAnuncio" class="form-control-file" id="exampleFormControlFile1" required>
             </div>
 
             <div class="card-group">
