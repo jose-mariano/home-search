@@ -2,44 +2,54 @@
 
 function opcaoValido($opcao) {
     if(($opcao) != "alugar" && ($opcao) != "vender") {
-        echo ("<span class='msgErro'>Selecione se deseja alugar ou vender!</span>");
-        return false;
-    } else {
-        return true;
-    }   
+        return array(
+            "campoValido" => false,
+            "msgErro" => "Para continuar, você precisa selecionar uma opção!"
+        );
+    }
+    return array("campoValido" => true);   
 }
 
 function valorValido($valor) {
     if(empty($valor)) {
-        echo ("<span class='msgErro'>Digite o valor do imóvel!</span>");
-        return false;
-    } else {
-        return true;
-    }   
-}
+        return array(
+            "campoValido" => false,
+            "msgErro" => "Para continuar, você precisa definir um valor!"
+        );
+    }
+    return array("campoValido" => true); 
+}   
 
 function cepValido($cep) {
-    if(empty($cep)) {
-        echo ("<span class='msgErro'>Digite o número do CEP!</span>");
-        return false;
-    } elseif(strlen($cep) != 8) {
-        echo ("<span class='msgErro'>Digite o CEP com 8 números!</span>");
-        return false;
-    } else {
-        return true;
+    if(!is_numeric($cep)) {
+        return array(
+            "campoValido" => false,
+            "msgErro" => "Para continuar, digite seu CEP utilizando apenas números!"
+        );
     }
+    if(strlen($cep) != 8) {
+        return array(
+            "campoValido" => false,
+            "msgErro" => "Para continuar, digite seu CEP com exatos 8 números!"
+        );
+    } 
+    return array("campoValido" => true);
 }
 
 function enderecoValido($endereco) {
     if(empty($endereco)) {
-        echo ("<span class='msgErro'>Digite o nome do logradouro!</span>");
-        return false;
-    } elseif(strlen($endereco) > 100) {
-        echo ("<span class='msgErro'>Utilize até 100 caracteres!</span>");
-        return false;
-    } else {
-        return true;
+        return array(
+            "campoValido" => false,
+            "msgErro" => "Para continuar, você precisa digitar seu endereço!"
+        );
     }
-}  
+    if(strlen($endereco) > 100) {
+        return array(
+            "campoValido" => false,
+            "msgErro" => "Para continuar, digite seu endereço utilizando no máximo 100 caracteres!"
+        );
+    } 
+    return array("campoValido" => true);
+}
 
 ?>
