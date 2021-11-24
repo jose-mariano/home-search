@@ -10,7 +10,6 @@
     <link rel="icon" href="public/img/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="public/css/login.css">
     <link rel="stylesheet" href="public/css/novoAnuncio.css">
-
 </head>
 <body class="bg-gray-300">
     <!-- HEADER -->
@@ -121,7 +120,7 @@
 
             <div class="card-group">
                 <label>Valor do imóvel*</label>
-                <input type="text" name="cpf" placeholder="R$" required>
+                <input type="number" name="cpf" placeholder="R$" step="0.01" required>
             </div>
             <div class="card-group btn">
                 <button type="submit">CADASTRAR</button>

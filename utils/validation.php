@@ -4,7 +4,10 @@ function imagem_eh_valida($imagem) {
   $informacoesNomeDaImagem = explode(".", $imagem["name"]);
   
   if (count($informacoesNomeDaImagem) < 2) {
-    return false;
+    return array(
+      "campoValido" => false,
+      "msgErro" => "Arquivo sem extensão!"
+    );
   }
 
   $nomeDaImagem = $informacoesNomeDaImagem[0];
@@ -13,17 +16,24 @@ function imagem_eh_valida($imagem) {
   $extenssoesPermitidas = array("jpeg", "jpg", "png", "svg", "webp");
 
   if (!in_array($extensaoDaImagem, $extenssoesPermitidas)) {
-    return false;
+    return array(
+      "campoValido" => false,
+      "msgErro" => "Arquivo não suportado!"
+    );
   }
 
-  $tamanhoMaximoDoArquivo = 10 * 1000000;
+  $mb = 10;
+  $tamanhoMaximoDoArquivo = $mb * 1000000;
   $tamanhoDoArquivo = $imagem["size"];
 
   if ($tamanhoDoArquivo > $tamanhoMaximoDoArquivo) {
-    return false;
+    return array(
+      "campoValido" => false,
+      "msgErro" => "Arquivo não pode exceder {$mb}MB!"
+    );
   }
 
-  return true;
+  return array("campoValido" => true);
 }
 
 ?>
