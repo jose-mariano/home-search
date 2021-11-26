@@ -1,3 +1,12 @@
+<?php
+
+//Import do arquivo de conexão com o banco
+require_once('bd/conexao.php');
+
+(conexaoMysql());
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>

@@ -2,7 +2,7 @@
 
     //import do arquivo de conexão com o BD
     require_once('conexao.php');
-    require_once("../utils/alerts.php");
+    require_once("utils/alerts.php");
 
     function inserirAnuncio (
         $titulo_anuncio,            
@@ -60,6 +60,7 @@
                 mensagemSucesso("Anúncio cadastrado com sucesso!");
             else 
                 mensagemErro("Erro ao cadastrar anúncio");
+               //echo(mysqli_error($conexao));
          }
      }
 
