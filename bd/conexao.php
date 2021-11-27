@@ -11,7 +11,7 @@ function conexaoMysql()
     
     $user = (string) "root";
 
-    $password = (string) "Lari**2002";
+    $password = (string) "admin";
 
     $database = (string) "homesearch";
     

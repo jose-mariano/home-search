@@ -5,6 +5,11 @@
     require_once("bd/anuncio.php");
     require_once("utils/manipulacaoImagem.php");
 
+    $idAnuncio = isset($_GET["id"]) ? $_GET["id"] : "" ;
+    if($idAnuncio == ""){
+        header("Location: anunciante.php");
+    }
+
     $formularioPreenchido = isset($_POST["btnEnviar"]) ? $_POST["btnEnviar"] : "" ;
     if($formularioPreenchido != ""){
         $dados = array(
@@ -19,9 +24,9 @@
             "tituloAnuncio" => isset($_POST["tituloAnuncio"]) ? $_POST["tituloAnuncio"] : "" ,
             "descricaoAnuncio" => isset($_POST["descricaoAnuncio"]) ? $_POST["descricaoAnuncio"] : "" ,
             "valorAnuncio" => isset($_POST["valorAnuncio"]) ? $_POST["valorAnuncio"] : "" ,
-            "tipoAnuncio" => isset($_POST["tipoAnuncio"]) ? $_POST["tipoAnuncio"] : "" ,
-            "imagemAnuncio" => isset($_FILES["imagemAnuncio"]) ? $_FILES["imagemAnuncio"] : "" 
+            "tipoAnuncio" => isset($_POST["tipoAnuncio"]) ? $_POST["tipoAnuncio"] : "" 
         );
+        $imagemAnuncio = isset($_FILES["imagemAnuncio"]) ? $_FILES["imagemAnuncio"] : "";
         $complementoAnuncio = isset($_POST["complementoAnuncio"]) ? $_POST["complementoAnuncio"] : "" ;
         $qntdVagas = isset($_POST["qntdVagas"]) ? $_POST["qntdVagas"] : 0 ;
 
@@ -30,9 +35,15 @@
             alert('Todos os campos obrigatórios precisam estar preenchidos!');
             </script>");
         } else {
-            $imagem = salvarImagem($dados["imagemAnuncio"], "storage");
+            $imagem = $anuncio['imagem_anuncio'];
 
-            inserirAnuncio(
+            if (is_array($imagemAnuncio) && count($imagemAnuncio) > 0){
+                $imagem = salvarImagem($dados["imagemAnuncio"], "storage");
+            }
+
+            atualizarAnuncio(
+                $idAnuncio,
+                1, // Id do anunciante
                 $dados["tituloAnuncio"],          
                 $dados["tipoAnuncio"],              
                 str_replace(",", ".", $dados["valorAnuncio"]),
@@ -47,15 +58,16 @@
                 1, // Disponibilidade anúncio
                 $dados["cidadeAnuncio"],
                 $dados["descricaoAnuncio"],
-                1, // Id do anunciante
                 $dados["categoriaImovel"],
                 $complementoAnuncio,
                 $qntdVagas
-            
             );
+            header('Location: anunciante.php');
         }
 
     }
+
+    $anuncio = pegarAnuncioPorId($idAnuncio);
 ?>
 
 <!DOCTYPE html>
@@ -95,7 +107,7 @@
         </div>
     </header>
     <!-- LOGIN -->
-    <form class="form" action="novoAnuncio.php" method="POST" enctype="multipart/form-data">
+    <form class="form" action="editarAnuncio.php?id=<?= $idAnuncio ?>" method="POST" enctype="multipart/form-data">
         <div class="card">
             <div class="card-top">
                 <img class="imgCadastro" src="public/img/corretor-de-imoveis.png" alt="">
@@ -111,8 +123,9 @@
 
                             $id_categoria = $categoria["id_categoria"];
                             $nome_categoria = $categoria["nome_categoria"];
+                            $opcaoSelecionada = ($id_categoria == $anuncio['fk_categoria_anuncio']) ? "selected" : "";
 
-                            echo("<option value='{$id_categoria}'>{$nome_categoria}</option>");
+                            echo("<option value='{$id_categoria}' {$opcaoSelecionada}>{$nome_categoria}</option>");
                         }
                     ?>
                 </select>
@@ -121,101 +134,105 @@
             <div class="card-group teste">
                 <div class="te">
                     <label>Rua*</label>
-                    <input type="text" name="ruaAnuncio" placeholder="Digite aqui sua rua" required>
+                    <input type="text" name="ruaAnuncio" value="<?= $anuncio['rua_anuncio'] ?>" placeholder="Digite aqui sua rua" required>
                 </div>
                 <div class="tes">
                     <label>Número*</label>
-                    <input type="text" name="numeroAnuncio" placeholder="Ex: 15" required>
+                    <input type="text" name="numeroAnuncio" value="<?= $anuncio['numero_casa_anuncio'] ?>" placeholder="Ex: 15" required>
                 </div>
             </div>
             <div class="card-group cb">
                 <div class="city">
                     <label>Cidade* <br></label>
-                    <input type="text" name="cidadeAnuncio" placeholder="Digite sua cidade" required>
+                    <input type="text" name="cidadeAnuncio" value="<?= $anuncio['cidade_anuncio'] ?>" placeholder="Digite sua cidade" required>
                 </div>
                 <div class="bairro">
                     <label>Bairro* <br></label>
-                    <input type="text" name="bairroAnuncio" placeholder="Digite seu bairro" required>
+                    <input type="text" name="bairroAnuncio" value="<?= $anuncio['bairro_anuncio'] ?>" placeholder="Digite seu bairro" required>
                 </div>
                 <div class="cep">
                     <label>CEP* <br></label>
-                    <input type="text" name="CEP" placeholder="Digite seu CEP" required>
+                    <input type="text" name="CEP" value="<?= $anuncio['cep_anuncio'] ?>" placeholder="Digite seu CEP" required>
                 </div>
             </div>
             <div class="card-group">
                 <label>Complemento (Opcional) </label>
-                <input type="text" name="complementoAnuncio" placeholder="Digite algum ponto de referencia.">
+                <input type="text" name="complementoAnuncio" value="<?= $anuncio['complemento_anuncio'] ?>" placeholder="Digite algum ponto de referencia.">
             </div>
             <div class="card-group">
                 <label for="exampleFormControlSelect1">Quantidade de quartos*</label>
                 <select class="form-control" id="exampleFormControlSelect1" name="quartosAnuncio">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
+                    <?php    
+                        for ($index = 1; $index <= 10; $index++){
+                            $opcaoSelecionada = ($index == $anuncio['numero_quartos_anuncio']) ? "selected" : "";
+                            echo ("<option value='{$index}' {$opcaoSelecionada}>{$index}</option>");
+                        }
+                    ?>
                 </select>
             </div>
             <div class="card-group">
                 <label for="exampleFormControlSelect1">Quantidade de banheiros*</label>
                 <select class="form-control" id="exampleFormControlSelect2" name="qntdBanheiros">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
+                    <?php    
+                        for ($index = 1; $index <= 5; $index++){
+                            $opcaoSelecionada = ($index == $anuncio['numero_banheiros_anuncio']) ? "selected" : "";
+                            echo ("<option value='{$index}' {$opcaoSelecionada}>{$index}</option>");
+                        }
+                    ?>
                 </select>
             </div>
 
             <div class="card-group">
                 <label for="exampleFormControlSelect1">Quantidade de vagas</label>
                 <select class="form-control" id="qntdVagas" name="vagasAnuncio">
-                    <option value="0" selected >0</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
+                    <?php    
+                        for ($index = 0; $index <= 5; $index++){
+                            $opcaoSelecionada = ($index == $anuncio['numero_vagas_anuncio']) ? "selected" : "";
+                            echo ("<option value='{$index}' {$opcaoSelecionada}>{$index}</option>");
+                        }
+                    ?>
                 </select>
             </div>
 
             <div class="card-group">
-                <label>Imagem do imóvel*</label>
-                <input type="file" class="form-control-file" id="exampleFormControlFile1" name="imagemAnuncio" required>
+                <label>Imagem do imóvel</label>
+                <input type="file" class="form-control-file" id="exampleFormControlFile1" name="imagemAnuncio" >
             </div>
 
             <div class="card-group">
                 <label> O que gostaria de fazer com seu imóvel?</label>
                 <div>
+                    <?php
+                        $opcaoAlugar = ($anuncio['tipo_anuncio'] == "alugar") ? 'checked' : ""; 
+                        $opcaoVender = ($anuncio['tipo_anuncio'] == "vender") ? 'checked' : ""; 
+                    ?>
                     <label for="nome">Alugar</label>
-                    <input type="radio" name="tipoAnuncio" id="alugar" value="alugar">
+                    <input type="radio" name="tipoAnuncio" id="alugar" value="alugar" <?= $opcaoAlugar ?>>
 
                     <label for="nome">Vender</label>
-                    <input type="radio" name="tipoAnuncio" id="vender" value="vender">
+                    <input type="radio" name="tipoAnuncio" id="vender" value="vender" <?= $opcaoVender ?>>
                 </div>
             </div>
 
             <div class="card-group">
                 <label>Titulo do seu anúncio*</label>
-                <input class="test"  type="text" name="tituloAnuncio" placeholder="Digite um titulo para seu anúncio" required>
+                <input class="test"  type="text" name="tituloAnuncio" value="<?= $anuncio['titulo_anuncio'] ?>" placeholder="Digite um titulo para seu anúncio" required>
             </div>
 
             <div class="card-group ">
                 <label>Descrição do imóvel*</label>
-                <textarea rows="6" cols="87"   name="descricaoAnuncio" placeholder="Digite aqui uma breve descrição do imóvel"  required></textarea>
+                <textarea rows="6" cols="87"   name="descricaoAnuncio" placeholder="Digite aqui uma breve descrição do imóvel"  required><?= $anuncio['descricao_anuncio'] ?></textarea>
             </div>
 
             <div class="card-group">
                 <label>Valor do imóvel*</label>
-                <input type="text" name="valorAnuncio" placeholder="R$" required>
+                <input type="text" name="valorAnuncio" value="<?= $anuncio['valor_anuncio'] ?>" placeholder="R$" required>
             </div>
             <div class="card-group btn">
-                <button type="submit" name="btnEnviar" value="Salvar">CADASTRAR</button>
+                <a href="anunciante.php" class="card-group btn">
+                    <button>CANCELAR</button>
+                </a>
+                <button type="submit" name="btnEnviar" value="Salvar">SALVAR ALTERAÇÕES</button>
             </div>
         </div>
 

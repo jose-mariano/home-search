@@ -13,6 +13,7 @@
         $numero_casa_anuncio,       
         $bairro_anuncio,       
         $numero_quartos_anuncio,   
+        $numero_banheiros_anuncio,
         $imagem_anuncio,         
         $data_criacao_anuncio,      
         $disponibilidade_anuncio,
@@ -39,6 +40,7 @@
                 complemento_anuncio,
                 bairro_anuncio,
                 numero_quartos_anuncio,
+                numero_banheiros_anuncio,
                 numero_vagas_anuncio,
                 imagem_anuncio,
                 data_criacao_anuncio,
@@ -51,7 +53,7 @@
                 values('". $titulo_anuncio ."', '". $tipo_anuncio ."', '". $valor_anuncio ."',
                     '". $cep_anuncio ."', '". $rua_anuncio ."', '". $numero_casa_anuncio ."',
                     '". $complemento_anuncio ."', '". $bairro_anuncio ."',
-                    '". $numero_quartos_anuncio ."', '". $numero_vagas_anuncio ."',
+                    '". $numero_quartos_anuncio ."','". $numero_banheiros_anuncio ."', '". $numero_vagas_anuncio ."',
                     '". $imagem_anuncio ."', '". $data_criacao_anuncio ."',
                     '". $disponibilidade_anuncio ."', '". $cidade_anuncio ."', '". $descricao_anuncio ."',
                     '". $id_anunciante ."', '". $categoria_anuncio ."')";
@@ -66,6 +68,7 @@
 
      function atualizarAnuncio (
         $id_anuncio,
+        $id_anunciante,
         $titulo_anuncio,            
         $tipo_anuncio,              
         $valor_anuncio,          
@@ -73,7 +76,8 @@
         $rua_anuncio,             
         $numero_casa_anuncio,       
         $bairro_anuncio,       
-        $numero_quartos_anuncio,   
+        $numero_quartos_anuncio,  
+        $numero_banheiros_anuncio, 
         $imagem_anuncio,         
         $data_criacao_anuncio,      
         $disponibilidade_anuncio,
@@ -98,6 +102,7 @@
             complemento_anuncio = '{$complemento_anuncio}',
             bairro_anuncio = '{$bairro_anuncio}',
             numero_quartos_anuncio = '{$numero_quartos_anuncio}',
+            numero_banheiros_anuncio = '{$numero_banheiros_anuncio}',
             numero_vagas_anuncio = '{$numero_vagas_anuncio}',
             imagem_anuncio = '{$imagem_anuncio}',
             data_criacao_anuncio = '{$data_criacao_anuncio}',
@@ -105,10 +110,13 @@
             cidade_anuncio = '{$cidade_anuncio}',
             descricao_anuncio = '{$descricao_anuncio}',
             fk_categoria_anuncio = '{$categoria_anuncio}'
-            WHERE id_anuncio = {$id_anuncio};";
+            WHERE id_anuncio = {$id_anuncio} AND fk_anunciante = {$id_anunciante};";
        
             if (mysqli_query($conexao, $sql))
-                mensagemSucesso("Anúncio atualizado com sucesso!");
+                echo ("<script>
+                alert('Anuncio atualizado com sucesso!');
+                window.location = 'anunciante.php';
+                </script>");
             else 
                 mensagemErro("Erro ao atualizar anúncio");
          }
