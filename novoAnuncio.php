@@ -1,3 +1,10 @@
+<?php
+
+require_once ('utils/validacao.php')
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +17,7 @@
     <link rel="icon" href="public/img/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="public/css/login.css">
     <link rel="stylesheet" href="public/css/novoAnuncio.css">
+
 
 </head>
 <body class="bg-gray-300">
@@ -35,7 +43,7 @@
         </div>
     </header>
     <!-- LOGIN -->
-    <form class="form" action="#">
+    <form class="form" action="" method="post">
         <div class="card">
             <div class="card-top">
                 <img class="imgCadastro" src="public/img/corretor-de-imoveis.png" alt="">
@@ -58,7 +66,7 @@
                 </div>
                 <div class="tes">
                     <label>Número*</label>
-                    <input type="text" name="numero" placeholder="Ex: 15" required>
+                    <input type="text" name="numero" placeholder="Ex: 16" required>
                 </div>
             </div>
             <div class="card-group cb">
@@ -77,11 +85,11 @@
             </div>
             <div class="card-group">
                 <label>Complemento (Opcional) </label>
-                <input type="text" name="CEP" placeholder="Digite algum ponto de referencia.">
+                <input type="text" name="complemento" placeholder="Digite algum ponto de referencia.">
             </div>
             <div class="card-group">
                 <label for="exampleFormControlSelect1">Quantidade de quartos*</label>
-                <select class="form-control" id="exampleFormControlSelect1">
+                <select class="form-control" name="qnt_quarto" id="exampleFormControlSelect1">
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
@@ -115,8 +123,9 @@
             </div>
 
             <div class="card-group ">
-                <label>Descrição do imóvel*</label>
-                <textarea rows="6" cols="87"   name="descricao" placeholder="Digite aqui uma breve descrição do imóvel"  required></textarea>
+            <textarea name="msg" id="msg" cols="87" rows="6" maxlength="300"placeholder="Digite aqui uma breve descrição do imóvel"  required></textarea>
+                <div class="result" >Caracteres restantes: 300</div>
+                <script src="public/js/caracteres.js"></script>
             </div>
 
             <div class="card-group">
@@ -124,7 +133,7 @@
                 <input type="text" name="cpf" placeholder="R$" required>
             </div>
             <div class="card-group btn">
-                <button type="submit">CADASTRAR</button>
+                <button type="submit" name="btn_enviar" value="Enviado">CADASTRAR</button>
             </div>
         </div>
 
