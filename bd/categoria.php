@@ -2,8 +2,7 @@
 <?php
 
     require_once("conexao.php");
-
-    require_once("../utils/alerts.php");
+    require_once("utils/alerts.php");
 
     function listarCategorias (){
         $conexao = conexaoMysql();

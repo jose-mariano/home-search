@@ -1,3 +1,16 @@
+<?php
+
+require_once('utils/autenticacao.php');
+
+$cpf = isset($_POST["cpf"]) ? $_POST["cpf"] : "" ;
+$senha = isset($_POST["senha"]) ? $_POST["senha"] : "" ;
+
+if($cpf != "" && $senha != "") {
+    login($cpf, $senha);
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -25,7 +38,7 @@
         </div>
     </header>
     <!-- LOGIN -->
-    <form class="form" action="#">
+    <form class="form" action="login.php" method="POST">
         <div class="card">
             <div class="card-top">
                 <img class="imglogin" src="public/img/login3.jpg" alt="">
@@ -39,11 +52,7 @@
 
             <div class="card-group">
                 <label>Senha</label>
-            <input type="password" name="cpf" placeholder="Digite sua senha" required>      
-            </div>
-
-            <div class="card-group">
-                <label><input type="checkbox">Lembre-me</label>     
+            <input type="password" name="senha" placeholder="Digite sua senha" required>      
             </div>
 
             <div class="card-group btn">

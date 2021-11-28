@@ -1,6 +1,6 @@
 <?php
 
-require_once("../bd/categoria.php");
+require_once("bd/adminCategoria.php");
 
 $modo =  isset($_GET["modo"]) ? $_GET["modo"] : "" ;
 $id =  isset($_GET["id"]) ? $_GET["id"] : "" ;
@@ -101,7 +101,6 @@ if ($modo == "excluir" && $id != "")
                 }
 
                 ?>
-
                 </table>
             </div>
         </div>

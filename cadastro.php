@@ -1,3 +1,31 @@
+<?php
+
+require_once ('utils/validation.php');
+require_once ('bd/anunciante.php');
+
+$dados = array(
+    "nome" => isset($_POST['nome']) ? $_POST['nome'] : "",
+    "email" => isset($_POST['email']) ? $_POST['email'] : "",
+    "senha" => isset($_POST['senha']) ? $_POST['senha'] : "",
+    "confirmarSenha" => isset($_POST['confirmarSenha']) ? $_POST['confirmarSenha'] : "",
+    "cpf" => isset($_POST['cpf']) ? $_POST['cpf'] : "",
+    "celular" => isset($_POST['celular']) ? $_POST['celular'] : ""
+);
+
+if (!in_array("", $dados)){
+    $nome = $dados['nome'];
+    $email = $dados['email'];
+    $senha = $dados['senha'];
+    $confirmarSenha = $dados['confirmarSenha'];
+    $cpf = $dados['cpf'];
+    $celular = $dados['celular'];
+    if (anuncianteEhValido($nome, $email, $senha, $confirmarSenha, $cpf, $celular) == true) {
+        inserirAnunciante($nome, $email, md5($senha), $cpf, $celular);
+    } 
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -25,7 +53,7 @@
         </div>
     </header>
     <!-- LOGIN -->
-    <form class="form" action="#">
+    <form class="form" action="cadastro.php" method="POST">
     <div class="card">
             <div class="card-top">
                 <img class="imgCadastro" src="public/img/corretor-de-imoveis.png" alt="">
@@ -35,32 +63,32 @@
 
             <div class="card-group">
                 <label>Nome*</label>
-            <input type="text" name="nome" placeholder="Digite seu Nome" required>      
+            <input type="text" name="nome" placeholder="Digite seu Nome" maxlength="100" required>      
             </div>
 
             <div class="card-group">
                 <label>Email*</label>
-            <input type="email" name="email" placeholder="exemplo@gmail.com" required>      
+            <input type="email" name="email" placeholder="exemplo@gmail.com" maxlength="100" required>      
             </div>
 
             <div class="card-group">
                 <label>Senha*</label>
-            <input type="password" name="senha" placeholder="Digite sua senha" required>      
+            <input type="password" name="senha" placeholder="Digite sua senha" maxlength="35" required>      
             </div>
 
             <div class="card-group">
                 <label>Confirmar Senha*</label>
-            <input type="password" name="senha" placeholder="Digite sua senha novamente" required>      
+            <input type="password" name="confirmarSenha" placeholder="Digite sua senha novamente" maxlength="35" required>      
             </div>
 
             <div class="card-group">
                 <label>CPF*</label>
-            <input type="text" name="cpf" placeholder="Digite seu CPF" required>      
+            <input type="text" name="cpf" placeholder="Digite seu CPF" maxlength="11" required>      
             </div>
 
             <div class="card-group cel">
                 <label>Celular*</label>
-            <input type="tel" name="cpf" placeholder="Digite seu número para contato" required>      
+            <input type="tel" name="celular" placeholder="11999999999" maxlength="11" required>      
             </div>
 
             <div class="card-group btn">
