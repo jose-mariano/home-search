@@ -55,13 +55,13 @@ $categoria_anuncio = isset($_POST['categoriaAnuncio']) ? $_POST['categoriaAnunci
             <button class="inline-block w-72 h-20 text-2xl text-white bg-gray-700 ml-10 rounded-full hover:bg-blue-500">Desejo Comprar</button> -->
 
             <form action="index.php" method="POST">
-                <select name="tipoAnuncio">
-                    <option value="">Todos</option>
-                    <option value="alugar">Alugar</option>
-                    <option value="vender">Vender</option>  
+                <select class="inline-block w-60 h-20 text-2xl text-white text-center bg-gray-700 mr-10 rounded-full hover:bg-blue-500" name="tipoAnuncio">
+                    <option class="bg-gray-700" value="">Alugar/Comprar</option>
+                    <option class="bg-gray-700" value="alugar">Alugar</option>
+                    <option class="bg-gray-700" value="vender">Vender</option>  
                 </select>
-                <select name="categoriaAnuncio">
-                    <option value="">Todas</option>
+                <select class="inline-block w-60 h-20 text-2xl text-white text-center bg-gray-700 mr-10 rounded-full hover:bg-blue-500" name="categoriaAnuncio">
+                    <option class="bg-gray-700" value="">Categorias</option>
                     <?php
                         $categorias = listarCategorias();
                         while($categoria = mysqli_fetch_assoc($categorias)){
@@ -69,7 +69,7 @@ $categoria_anuncio = isset($_POST['categoriaAnuncio']) ? $_POST['categoriaAnunci
                             $id_categoria = $categoria["id_categoria"];
                             $nome_categoria = $categoria["nome_categoria"];
 
-                            echo("<option value='{$id_categoria}'>{$nome_categoria}</option>");
+                            echo("<option class='bg-gray-700' value='{$id_categoria}'>{$nome_categoria}</option>");
                         }
                     
                     ?>
