@@ -81,7 +81,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Novo Anúncio</title>
+    <title>Editar anúncio</title>
 
     <link rel="icon" href="public/img/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="public/css/login.css">
@@ -225,7 +225,9 @@
 
             <div class="card-group ">
                 <label>Descrição do imóvel*</label>
-                <textarea rows="6" cols="87"   name="descricaoAnuncio" placeholder="Digite aqui uma breve descrição do imóvel"  required><?= $anuncio['descricao_anuncio'] ?></textarea>
+                <textarea name="descricaoAnuncio" id="msg" cols="87" rows="6" maxlength="300"placeholder="Digite aqui uma breve descrição do imóvel"  required></textarea>
+                <div class="result">Caracteres restantes: 300</div>
+                <script src="public/js/caracteres.js"></script>
             </div>
 
             <div class="card-group">

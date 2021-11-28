@@ -80,10 +80,8 @@ function excluirCategoria($id){
         if (mysqli_query($conexao, $sql))
             mensagemSucesso("Categoria excluída com sucesso!");
         else 
-            mensagemErro("Erro ao excluir categoria");
+            mensagemErro("Erro ao excluir categoria, verifique se essa categoria esta sendo ultilizada !");
     }
-
-    mensagemErro("Erro na conexão com o Banco de Dados");
     
 }
 

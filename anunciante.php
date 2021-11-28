@@ -14,7 +14,7 @@ $id_anunciante = $_SESSION['id'];
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Área do Anunciante</title>
+    <title>Meus anúncios</title>
     <link rel="icon" href="public/img/gerenciar.png" type="image/x-icon">
     <link rel="stylesheet" href="public/css/anunciante.css">
 </head>
@@ -51,10 +51,6 @@ $id_anunciante = $_SESSION['id'];
                     Novo Anúncio
                 </button>
             </a>
-            <button class="inline-block w-72 h-20 text-2xl text-white bg-gray-700 ml-10 rounded-full hover:bg-blue-500">
-            <img src="public/img/anuncios.png" class="w-10 pb-1 inline-block" alt="Anunciar">
-                Meus Anúncios
-            </button>
         </div>        
     </div>
     <!-- GRID ANUNCIOS -->
@@ -69,14 +65,15 @@ $id_anunciante = $_SESSION['id'];
                     <h1 class='p-5 text-lg font-bold'>".$anuncio["titulo_anuncio"]."</h1>
                     <h2 class='p-5 text-lg font-semibold'>R$ ".$anuncio["valor_anuncio"]."</h2>
                     <p class='font-light text-lg p-5'>".$anuncio["descricao_anuncio"]."</p>
+                    <a href='anuncioDetalhado.php?id=".$anuncio['id_anuncio']."' class='w-10 p-1.5 text-white rounded-2xl'>
+                        <img src='public/img/visualizar.png' title='Visualizar' class='w-7 inline-block' alt='Visualizar'>
+                    </a>
                     <a href='editarAnuncio.php?id=".$anuncio['id_anuncio']."' class='w-10 p-1.5 text-white rounded-2xl'>
                         <img src='public/img/editar.png' title='Editar' class='w-7 inline-block' alt='Editar'>
                     </a>
                     <a onclick=\"return confirm('Deseja realmente excluir?');\" href='excluirAnuncio.php?id=".$anuncio['id_anuncio']."' class='w-10 p-1.5 text-white rounded-2xl'>
                         <img src='public/img/excluir.png' title='Excluir' class='w-7 inline-block' alt='Excluir'>
                     </a>
-                    <a href='anuncioDetalhado.php?id=".$anuncio['id_anuncio']."' class='w-20 p-1.5 m-8 text-white bg-gray-700 hover:bg-blue-500 rounded-2xl'>
-                Detalhes</a>
                 </div>"
                 );
             }

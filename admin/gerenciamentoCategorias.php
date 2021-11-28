@@ -1,6 +1,9 @@
 <?php
 
 require_once("bd/adminCategoria.php");
+require_once("utils/autenticacao.php");
+
+verificarAutenticacao();
 
 $modo =  isset($_GET["modo"]) ? $_GET["modo"] : "" ;
 $id =  isset($_GET["id"]) ? $_GET["id"] : "" ;
@@ -37,9 +40,9 @@ if ($modo == "excluir" && $id != "")
     <!-- HEADER -->
     <header>
         <div class="flex flex-1 relative bg-gray-700 w-full h-24">
-            <!-- LOGO HEADER -->
+            <!-- O HEADER -->
             <div>
-                <a href="">
+                <a href="#">
                     <img src="../public/img/logo.png" alt="Logo Homesearch" class="w-70 ml-4 mt-5">
                 </a>
             </div>
@@ -48,10 +51,10 @@ if ($modo == "excluir" && $id != "")
                 <nav class="flex-1">
                     <ul class="flex justify-end flex-1">
                         <li class="p-5">
-                            <a href="" class="hover:bg-blue-500 p-3 rounded-full">Gerenciamento de Anunciantes</a>
+                            <a href="gerenciamentoAnunciantes.php" class="hover:bg-blue-500 p-3 rounded-full">Gerenciamento de Anunciantes</a>
                         </li>
                         <li class="p-5">
-                            <a href="" class="hover:bg-blue-500 p-3 rounded-full">Sair</a>
+                            <a href="logout.php" class="hover:bg-blue-500 p-3 rounded-full">Sair</a>
                         </li>
                     </ul>
                 </nav>

@@ -47,7 +47,7 @@ if($cpf != "" && $senha != "") {
 
             <div class="card-group">
                 <label>CPF</label>
-            <input type="text" name="cpf" placeholder="Digite seu CPF" required>      
+            <input type="text" name="cpf" placeholder="Digite seu CPF" maxlength="11" required>      
             </div>
 
             <div class="card-group">

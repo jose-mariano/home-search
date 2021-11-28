@@ -6,7 +6,6 @@ date_default_timezone_set('America/Sao_Paulo');
 function mensagemSucesso($texto){
     echo ("<script>
             alert('{$texto}');
-            window.location.href = 'gerenciamentoCategorias.php';
           </script>");
 }
 

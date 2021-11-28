@@ -213,7 +213,7 @@
 
             <div class="card-group ">
                 <label>Descrição do imóvel*</label>
-                <textarea name="msg" id="msg" cols="87" rows="6" maxlength="300"placeholder="Digite aqui uma breve descrição do imóvel"  required></textarea>
+                <textarea name="descricaoAnuncio" id="msg" cols="87" rows="6" maxlength="300"placeholder="Digite aqui uma breve descrição do imóvel"  required></textarea>
                 <div class="result">Caracteres restantes: 300</div>
                 <script src="public/js/caracteres.js"></script>
             </div>
