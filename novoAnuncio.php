@@ -6,7 +6,8 @@
     require_once("utils/manipulacaoImagem.php");
     require_once("utils/autenticacao.php");
 
-verificarAutenticacao();
+    verificarAutenticacao();
+    $id_anunciante = $_SESSION['id'];
 
     $formularioPreenchido = isset($_POST["btnEnviar"]) ? $_POST["btnEnviar"] : "" ;
     if($formularioPreenchido != ""){
@@ -50,7 +51,7 @@ verificarAutenticacao();
                 1, // Disponibilidade anúncio
                 $dados["cidadeAnuncio"],
                 $dados["descricaoAnuncio"],
-                1, // Id do anunciante
+                $id_anunciante,
                 $dados["categoriaImovel"],
                 $complementoAnuncio,
                 $qntdVagas

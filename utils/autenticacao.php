@@ -15,7 +15,7 @@ function login($cpf, $senha){
         exit;
     }
 
-    if ($senha != $anunciante['senha_anunciante']){
+    if (md5($senha) != $anunciante['senha_anunciante']){
         echo ("<script>
             alert('Acesso negado, usuario ou senha inválidos !')
             window.location = 'login.php';

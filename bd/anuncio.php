@@ -141,6 +141,40 @@
 
     }
 
+    function listarAnunciosPorFiltro($tipo_anuncio="", $categoria_anuncio=""){
+        $conexao = conexaoMysql();
+        if ($conexao)
+        {
+            $sql = "select * from tbl_anuncios ";
+            $tipo_anuncio_diferente_vazio = $tipo_anuncio != "" ;
+            $categoria_anuncio_diferente_vazio = $categoria_anuncio != "" ;
+
+            if ($tipo_anuncio_diferente_vazio || $categoria_anuncio_diferente_vazio){
+                $sql .= "where ";
+
+                if ($tipo_anuncio_diferente_vazio){
+                    $sql .= "tipo_anuncio = '{$tipo_anuncio}' ";
+                }
+
+                    if ($categoria_anuncio_diferente_vazio){
+                        if ($tipo_anuncio_diferente_vazio) {
+                            $sql .= "AND ";
+                        } 
+                      
+                        $sql .= "fk_categoria_anuncio = '{$categoria_anuncio}' ";
+                    }
+            }
+
+            $sql .= "order by data_criacao_anuncio desc; ";
+
+            $select = mysqli_query($conexao, $sql);
+
+            return $select;
+        }
+        
+        return array();
+    }
+
     function listarAnunciosPorAnunciante ($id_anunciante){
         $conexao = conexaoMysql();
 
@@ -169,7 +203,7 @@
             return mysqli_fetch_assoc($select);
         }
         
-        return array();
+        return false;
 
     }
     

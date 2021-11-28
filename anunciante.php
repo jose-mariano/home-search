@@ -4,6 +4,7 @@ require_once("bd/anuncio.php");
 require_once("utils/autenticacao.php");
 
 verificarAutenticacao();
+$id_anunciante = $_SESSION['id'];
 
 ?>
 
@@ -60,7 +61,7 @@ verificarAutenticacao();
     <div class="flex flex-wrap justify-center">
         <?php
 
-            $anuncios = listarAnunciosPorAnunciante(1);
+            $anuncios = listarAnunciosPorAnunciante($id_anunciante);
             while ($anuncio = mysqli_fetch_assoc($anuncios)){
                 echo ("
                 <div class='w-96 bg-white rounded-3xl flex-col p-5 m-1.5 my-5'>
@@ -74,6 +75,8 @@ verificarAutenticacao();
                     <a onclick=\"return confirm('Deseja realmente excluir?');\" href='excluirAnuncio.php?id=".$anuncio['id_anuncio']."' class='w-10 p-1.5 text-white rounded-2xl'>
                         <img src='public/img/excluir.png' title='Excluir' class='w-7 inline-block' alt='Excluir'>
                     </a>
+                    <a href='anuncioDetalhado.php?id=".$anuncio['id_anuncio']."' class='w-20 p-1.5 m-8 text-white bg-gray-700 hover:bg-blue-500 rounded-2xl'>
+                Detalhes</a>
                 </div>"
                 );
             }

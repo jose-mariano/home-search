@@ -7,6 +7,7 @@
     require_once("utils/autenticacao.php");
 
     verificarAutenticacao();
+    $id_anunciante = $_SESSION['id']; 
 
     $idAnuncio = isset($_GET["id"]) ? $_GET["id"] : "" ;
     if($idAnuncio == ""){
@@ -48,7 +49,7 @@
 
             atualizarAnuncio(
                 $idAnuncio,
-                1, // Id do anunciante
+                $id_anunciante,
                 $dados["tituloAnuncio"],          
                 $dados["tipoAnuncio"],              
                 str_replace(",", ".", $dados["valorAnuncio"]),
