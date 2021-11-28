@@ -1,3 +1,12 @@
+<?php
+
+require_once("bd/anuncio.php");
+require_once("utils/autenticacao.php");
+
+verificarAutenticacao();
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -23,7 +32,7 @@
                 <nav class="flex-1">
                     <ul class="flex justify-end flex-1">
                         <li class="p-5">
-                            <a href="index.php" class="hover:bg-blue-500 p-3 rounded-full">Sair</a>
+                            <a href="logout.php" class="hover:bg-blue-500 p-3 rounded-full">Sair</a>
                         </li>
                     </ul>
                 </nav>
@@ -49,70 +58,27 @@
     </div>
     <!-- GRID ANUNCIOS -->
     <div class="flex flex-wrap justify-center">
-        <div class="w-96 bg-white rounded-3xl flex-col p-5 m-1.5 my-5">
-            <img src="public/img/imovel1.png" alt="Imovel 2" class="w-96 p-5 rounded-3xl">
-            <h1 class="p-5 text-lg font-bold">Sobrado em Alphaville, Barueri, SP</h1>
-            <h2 class="p-5 text-lg font-semibold">R$ 2.000.000,00</h2>
-            <p class="font-light text-lg p-5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi, eaque temporibus repudiandae vel minima ipsum! Suscipit eveniet soluta dolorum aspernatur in placeat quibusdam non iusto praesentium, libero quae perferendis consequatur.</p>
-            <a href="" class="w-40 p-1.5 m-8 text-white bg-gray-700 hover:bg-blue-500 rounded-2xl">
-                <img src="public/img/gerenciar.png" class="w-7 pb-1 inline-block" alt="Mais Detalhes"> Gerenciar</a>
-        </div>
-        <div class="w-96 bg-white rounded-3xl flex-col p-5 m-1.5 my-5">
-            <img src="public/img/imovel2.png" alt="Imovel 2" class="w-96 p-5 rounded-3xl">
-            <h1 class="p-5 text-lg font-bold">Sobrado em Alphaville, Barueri, SP</h1>
-            <h2 class="p-5 text-lg font-semibold">R$ 2.000.000,00</h2>
-            <p class="font-light text-lg p-5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi, eaque temporibus repudiandae vel minima ipsum! Suscipit eveniet soluta dolorum aspernatur in placeat quibusdam non iusto praesentium, libero quae perferendis consequatur.</p>
-            <a href="" class="w-40 p-1.5 m-8 text-white bg-gray-700 hover:bg-blue-500 rounded-2xl">
-                <img src="public/img/gerenciar.png" class="w-7 pb-1 inline-block" alt="Mais Detalhes"> Gerenciar</a>
-        </div>
-        <div class="w-96 bg-white rounded-3xl flex-col p-5 m-1.5 my-5">
-            <img src="public/img/imovel3.png" alt="Imovel 2" class="w-96 p-5 rounded-3xl">
-            <h1 class="p-5 text-lg font-bold">Sobrado em Alphaville, Barueri, SP</h1>
-            <h2 class="p-5 text-lg font-semibold">R$ 2.000.000,00</h2>
-            <p class="font-light text-lg p-5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi, eaque temporibus repudiandae vel minima ipsum! Suscipit eveniet soluta dolorum aspernatur in placeat quibusdam non iusto praesentium, libero quae perferendis consequatur.</p>
-            <a href="" class="w-40 p-1.5 m-8 text-white bg-gray-700 hover:bg-blue-500 rounded-2xl">
-                <img src="public/img/gerenciar.png" class="w-7 pb-1 inline-block" alt="Mais Detalhes"> Gerenciar</a>
-        </div>
-        <div class="w-96 bg-white rounded-3xl flex-col p-5 m-1.5 my-5">
-            <img src="public/img/imovel4.png" alt="Imovel 2" class="w-96 p-5 rounded-3xl">
-            <h1 class="p-5 text-lg font-bold">Sobrado em Alphaville, Barueri, SP</h1>
-            <h2 class="p-5 text-lg font-semibold">R$ 2.000.000,00</h2>
-            <p class="font-light text-lg p-5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi, eaque temporibus repudiandae vel minima ipsum! Suscipit eveniet soluta dolorum aspernatur in placeat quibusdam non iusto praesentium, libero quae perferendis consequatur.</p>
-            <a href="" class="w-40 p-1.5 m-8 text-white bg-gray-700 hover:bg-blue-500 rounded-2xl">
-                <img src="public/img/gerenciar.png" class="w-7 pb-1 inline-block" alt="Mais Detalhes"> Gerenciar</a>
-        </div>
-        <div class="w-96 bg-white rounded-3xl flex-col p-5 m-1.5 my-5">
-            <img src="public/img/imovel5.png" alt="Imovel 2" class="w-96 p-5 rounded-3xl">
-            <h1 class="p-5 text-lg font-bold">Sobrado em Alphaville, Barueri, SP</h1>
-            <h2 class="p-5 text-lg font-semibold">R$ 2.000.000,00</h2>
-            <p class="font-light text-lg p-5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi, eaque temporibus repudiandae vel minima ipsum! Suscipit eveniet soluta dolorum aspernatur in placeat quibusdam non iusto praesentium, libero quae perferendis consequatur.</p>
-            <a href="" class="w-40 p-1.5 m-8 text-white bg-gray-700 hover:bg-blue-500 rounded-2xl">
-                <img src="public/img/gerenciar.png" class="w-7 pb-1 inline-block" alt="Mais Detalhes"> Gerenciar</a>
-        </div>
-        <div class="w-96 bg-white rounded-3xl flex-col p-5 m-1.5 my-5">
-            <img src="public/img/imovel6.png" alt="Imovel 2" class="w-96 p-5 rounded-3xl">
-            <h1 class="p-5 text-lg font-bold">Sobrado em Alphaville, Barueri, SP</h1>
-            <h2 class="p-5 text-lg font-semibold">R$ 2.000.000,00</h2>
-            <p class="font-light text-lg p-5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi, eaque temporibus repudiandae vel minima ipsum! Suscipit eveniet soluta dolorum aspernatur in placeat quibusdam non iusto praesentium, libero quae perferendis consequatur.</p>
-            <a href="" class="w-40 p-1.5 m-8 text-white bg-gray-700 hover:bg-blue-500 rounded-2xl">
-                <img src="public/img/gerenciar.png" class="w-7 pb-1 inline-block" alt="Mais Detalhes"> Gerenciar</a>
-        </div>
-        <div class="w-96 bg-white rounded-3xl flex-col p-5 m-1.5 my-5">
-            <img src="public/img/imovel7.png" alt="Imovel 2" class="w-96 p-5 rounded-3xl">
-            <h1 class="p-5 text-lg font-bold">Sobrado em Alphaville, Barueri, SP</h1>
-            <h2 class="p-5 text-lg font-semibold">R$ 2.000.000,00</h2>
-            <p class="font-light text-lg p-5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi, eaque temporibus repudiandae vel minima ipsum! Suscipit eveniet soluta dolorum aspernatur in placeat quibusdam non iusto praesentium, libero quae perferendis consequatur.</p>
-            <a href="" class="w-40 p-1.5 m-8 text-white bg-gray-700 hover:bg-blue-500 rounded-2xl">
-                <img src="public/img/gerenciar.png" class="w-7 pb-1 inline-block" alt="Mais Detalhes"> Gerenciar</a>
-        </div>
-        <div class="w-96 bg-white rounded-3xl flex-col p-5 m-1.5 my-5">
-            <img src="public/img/imovel8.png" alt="Imovel 2" class="w-96 p-5 rounded-3xl">
-            <h1 class="p-5 text-lg font-bold">Sobrado em Alphaville, Barueri, SP</h1>
-            <h2 class="p-5 text-lg font-semibold">R$ 2.000.000,00</h2>
-            <p class="font-light text-lg p-5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi, eaque temporibus repudiandae vel minima ipsum! Suscipit eveniet soluta dolorum aspernatur in placeat quibusdam non iusto praesentium, libero quae perferendis consequatur.</p>
-            <a href="" class="w-40 p-1.5 m-8 text-white bg-gray-700 hover:bg-blue-500 rounded-2xl">
-                <img src="public/img/gerenciar.png" class="w-7 pb-1 inline-block" alt="Mais Detalhes"> Gerenciar</a>
-        </div>
+        <?php
+
+            $anuncios = listarAnunciosPorAnunciante(1);
+            while ($anuncio = mysqli_fetch_assoc($anuncios)){
+                echo ("
+                <div class='w-96 bg-white rounded-3xl flex-col p-5 m-1.5 my-5'>
+                    <img src='".$anuncio["imagem_anuncio"]."' alt='Imovel 2' class='w-96 p-5 rounded-3xl'>
+                    <h1 class='p-5 text-lg font-bold'>".$anuncio["titulo_anuncio"]."</h1>
+                    <h2 class='p-5 text-lg font-semibold'>R$ ".$anuncio["valor_anuncio"]."</h2>
+                    <p class='font-light text-lg p-5'>".$anuncio["descricao_anuncio"]."</p>
+                    <a href='editarAnuncio.php?id=".$anuncio['id_anuncio']."' class='w-10 p-1.5 text-white rounded-2xl'>
+                        <img src='public/img/editar.png' title='Editar' class='w-7 inline-block' alt='Editar'>
+                    </a>
+                    <a onclick=\"return confirm('Deseja realmente excluir?');\" href='excluirAnuncio.php?id=".$anuncio['id_anuncio']."' class='w-10 p-1.5 text-white rounded-2xl'>
+                        <img src='public/img/excluir.png' title='Excluir' class='w-7 inline-block' alt='Excluir'>
+                    </a>
+                </div>"
+                );
+            }
+            
+        ?>
     </div>    
     <!-- FOOTER -->
     <div class="flex w-full bg-gray-700 h-20">

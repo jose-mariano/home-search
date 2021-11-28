@@ -4,6 +4,9 @@
     require_once("bd/categoria.php");
     require_once("bd/anuncio.php");
     require_once("utils/manipulacaoImagem.php");
+    require_once("utils/autenticacao.php");
+
+verificarAutenticacao();
 
     $formularioPreenchido = isset($_POST["btnEnviar"]) ? $_POST["btnEnviar"] : "" ;
     if($formularioPreenchido != ""){
@@ -35,8 +38,8 @@
             inserirAnuncio(
                 $dados["tituloAnuncio"],          
                 $dados["tipoAnuncio"],              
-                str_replace(",", ".", $dados["valorAnuncio"]),
-                $dados["CEP"],               
+                str_replace(",", ".", $dados["valorAnuncio"]), 
+                str_replace("-", "", $dados["CEP"]),              
                 $dados["ruaAnuncio"],             
                 $dados["numeroAnuncio"],       
                 $dados["bairroAnuncio"],       
@@ -139,7 +142,7 @@
                 </div>
                 <div class="cep">
                     <label>CEP* <br></label>
-                    <input type="text" name="CEP" placeholder="Digite seu CEP" required>
+                    <input type="text" maxlength="8" name="CEP" placeholder="Digite seu CEP" required>
                 </div>
             </div>
             <div class="card-group">

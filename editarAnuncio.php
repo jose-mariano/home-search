@@ -4,11 +4,16 @@
     require_once("bd/categoria.php");
     require_once("bd/anuncio.php");
     require_once("utils/manipulacaoImagem.php");
+    require_once("utils/autenticacao.php");
+
+    verificarAutenticacao();
 
     $idAnuncio = isset($_GET["id"]) ? $_GET["id"] : "" ;
     if($idAnuncio == ""){
         header("Location: anunciante.php");
     }
+
+    $anuncio = pegarAnuncioPorId($idAnuncio);
 
     $formularioPreenchido = isset($_POST["btnEnviar"]) ? $_POST["btnEnviar"] : "" ;
     if($formularioPreenchido != ""){
@@ -26,7 +31,7 @@
             "valorAnuncio" => isset($_POST["valorAnuncio"]) ? $_POST["valorAnuncio"] : "" ,
             "tipoAnuncio" => isset($_POST["tipoAnuncio"]) ? $_POST["tipoAnuncio"] : "" 
         );
-        $imagemAnuncio = isset($_FILES["imagemAnuncio"]) ? $_FILES["imagemAnuncio"] : "";
+        $imagemAnuncio = isset($_FILES["imagemAnuncio"]) ? $_FILES["imagemAnuncio"] : array("error" => 4);
         $complementoAnuncio = isset($_POST["complementoAnuncio"]) ? $_POST["complementoAnuncio"] : "" ;
         $qntdVagas = isset($_POST["qntdVagas"]) ? $_POST["qntdVagas"] : 0 ;
 
@@ -37,8 +42,8 @@
         } else {
             $imagem = $anuncio['imagem_anuncio'];
 
-            if (is_array($imagemAnuncio) && count($imagemAnuncio) > 0){
-                $imagem = salvarImagem($dados["imagemAnuncio"], "storage");
+            if (is_array($imagemAnuncio) && $imagemAnuncio['error'] == 0){
+                $imagem = salvarImagem($imagemAnuncio, "storage");
             }
 
             atualizarAnuncio(
@@ -47,7 +52,7 @@
                 $dados["tituloAnuncio"],          
                 $dados["tipoAnuncio"],              
                 str_replace(",", ".", $dados["valorAnuncio"]),
-                $dados["CEP"],               
+                str_replace("-", "", $dados["CEP"]),                
                 $dados["ruaAnuncio"],             
                 $dados["numeroAnuncio"],       
                 $dados["bairroAnuncio"],       
@@ -62,12 +67,10 @@
                 $complementoAnuncio,
                 $qntdVagas
             );
-            header('Location: anunciante.php');
         }
 
     }
 
-    $anuncio = pegarAnuncioPorId($idAnuncio);
 ?>
 
 <!DOCTYPE html>
@@ -230,7 +233,7 @@
             </div>
             <div class="card-group btn">
                 <a href="anunciante.php" class="card-group btn">
-                    <button>CANCELAR</button>
+                    <button type="button">CANCELAR</button>
                 </a>
                 <button type="submit" name="btnEnviar" value="Salvar">SALVAR ALTERAÇÕES</button>
             </div>

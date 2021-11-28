@@ -59,7 +59,10 @@
                     '". $id_anunciante ."', '". $categoria_anuncio ."')";
        
             if (mysqli_query($conexao, $sql))
-                mensagemSucesso("Anúncio cadastrado com sucesso!");
+                echo ("<script>
+                alert('Anuncio cadastrado com sucesso!');
+                window.location = 'anunciante.php';
+                </script>");
             else 
                 mensagemErro("Erro ao cadastrar anúncio");
                //echo(mysqli_error($conexao));
@@ -138,6 +141,22 @@
 
     }
 
+    function listarAnunciosPorAnunciante ($id_anunciante){
+        $conexao = conexaoMysql();
+
+        if ($conexao)
+        {
+            $sql = "select * from tbl_anuncios where fk_anunciante = {$id_anunciante} order by data_criacao_anuncio desc;";
+
+            $select = mysqli_query($conexao, $sql);
+
+            return $select;
+        }
+        
+        return array();
+
+    }
+
     function pegarAnuncioPorId ($id){
         $conexao = conexaoMysql();
 
@@ -170,20 +189,21 @@
 
     }
 
-    function excluirAnuncio($id){
+    function excluirAnuncio($id_anunciante, $id_anuncio){
         $conexao = conexaoMysql();
 
         if ($conexao)
         {
-            $sql = "DELETE FROM tbl_anuncios WHERE id_anuncio = {$id};";
+            $sql = "DELETE FROM tbl_anuncios WHERE id_anuncio = {$id_anuncio} AND fk_anunciante = {$id_anunciante};";
 
             if (mysqli_query($conexao, $sql))
-                mensagemSucesso("Anúncio excluído com sucesso!");
+                echo ("<script>
+                alert('Anuncio excluido com sucesso!');
+                window.location = 'anunciante.php';
+                </script>");
             else 
                 mensagemErro("Erro ao excluir anúncio");
         }
-
-        mensagemErro("Erro na conexão com o Banco de Dados");
         
     }
 ?>
