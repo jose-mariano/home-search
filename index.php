@@ -54,7 +54,7 @@ $categoria_anuncio = isset($_POST['categoriaAnuncio']) ? $_POST['categoriaAnunci
             <!-- <button class="inline-block w-72 h-20 text-2xl text-white bg-gray-700 mr-10 rounded-full hover:bg-blue-500">Desejo Alugar</button>
             <button class="inline-block w-72 h-20 text-2xl text-white bg-gray-700 ml-10 rounded-full hover:bg-blue-500">Desejo Comprar</button> -->
 
-            <form action="index.php" method="POST">
+            <form class="flex" action="index.php" method="POST">
                 <select class="inline-block w-60 h-20 text-2xl text-white text-center bg-gray-700 mr-10 rounded-full hover:bg-blue-500" name="tipoAnuncio">
                     <option class="bg-gray-700" value="">Alugar/Comprar</option>
                     <option class="bg-gray-700" value="alugar">Alugar</option>
@@ -74,7 +74,7 @@ $categoria_anuncio = isset($_POST['categoriaAnuncio']) ? $_POST['categoriaAnunci
                     
                     ?>
                 </select>
-                <button type="submit">Pesquisar</button>
+                <button type="submit"><img class="h-20" src="public/img/pesquisar.png"></button>
             </form>
         </div>        
     </div>
