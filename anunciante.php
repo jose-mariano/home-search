@@ -64,16 +64,16 @@ $id_anunciante = $_SESSION['id'];
                     <img src='".$anuncio["imagem_anuncio"]."' alt='Imovel 2' class='w-96 p-5 rounded-3xl'>
                     <h1 class='p-5 text-lg font-bold'>".$anuncio["titulo_anuncio"]."</h1>
                     <h2 class='p-5 text-lg font-semibold'>R$ ".$anuncio["valor_anuncio"]."</h2>
-                    <p class='font-light text-lg p-5'>".$anuncio["descricao_anuncio"]."</p>
-                    <a href='anuncioDetalhado.php?id=".$anuncio['id_anuncio']."' class='w-10 p-1.5 text-white rounded-2xl'>
-                        <img src='public/img/visualizar.png' title='Visualizar' class='w-7 inline-block' alt='Visualizar'>
+                    <div class='h-40 mb-5 overflow-hidden'><p class='font-light text-lg p-5'>".$anuncio["descricao_anuncio"]."</p></div>
+                    <div class='flex flex-1 justify-center'><a href='anuncioDetalhado.php?id=".$anuncio['id_anuncio']."' class='w-10 p-1.5 text-white rounded-2xl'>
+                       <img src='public/img/visualizar.png' title='Visualizar' class='w-7 inline-block' alt='Visualizar'>
                     </a>
                     <a href='editarAnuncio.php?id=".$anuncio['id_anuncio']."' class='w-10 p-1.5 text-white rounded-2xl'>
                         <img src='public/img/editar.png' title='Editar' class='w-7 inline-block' alt='Editar'>
                     </a>
                     <a onclick=\"return confirm('Deseja realmente excluir?');\" href='excluirAnuncio.php?id=".$anuncio['id_anuncio']."' class='w-10 p-1.5 text-white rounded-2xl'>
                         <img src='public/img/excluir.png' title='Excluir' class='w-7 inline-block' alt='Excluir'>
-                    </a>
+                    </a></div>
                 </div>"
                 );
             }

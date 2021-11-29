@@ -225,8 +225,8 @@
 
             <div class="card-group ">
                 <label>Descrição do imóvel*</label>
-                <textarea name="descricaoAnuncio" id="msg" cols="87" rows="6" maxlength="300"placeholder="Digite aqui uma breve descrição do imóvel"  required></textarea>
-                <div class="result">Caracteres restantes: 300</div>
+                <textarea name="descricaoAnuncio" id="msg" cols="87" rows="6" maxlength="300"placeholder="Digite aqui uma breve descrição do imóvel"  required><?= $anuncio['descricao_anuncio'] ?></textarea>
+                <div class="result">Caracteres restantes: <?= 300 - strlen($anuncio['descricao_anuncio']) ?></div>
                 <script src="public/js/caracteres.js"></script>
             </div>
 
