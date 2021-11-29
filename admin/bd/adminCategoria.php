@@ -50,7 +50,6 @@ function inserirCategoria($nome){
             mensagemErro("Erro ao cadastrar categoria");
     }
 
-    mensagemErro("Erro na conexão com o Banco de Dados");
 }
 
 function atualizarCategoria($nomeNovo, $id){
@@ -65,8 +64,6 @@ function atualizarCategoria($nomeNovo, $id){
         else 
             mensagemErro("Erro ao atualizar categoria");
     }
-
-    mensagemErro("Erro na conexão com o Banco de Dados");
     
 }
 

@@ -87,8 +87,10 @@ $categoria_anuncio = isset($_POST['categoriaAnuncio']) ? $_POST['categoriaAnunci
             echo ("
             <div class='w-96 bg-white rounded-3xl flex-col p-5 m-1.5 my-5'>
                 <img src='".$anuncio["imagem_anuncio"]."' alt='Imovel 2' class='w-96 p-5 rounded-3xl'>
+                <div class='h-20 overflow-hidden'>
                 <h1 class='p-5 text-lg font-bold'>".$anuncio["titulo_anuncio"]."</h1>
-                <h2 class='p-5 text-lg font-semibold'>R$ ".$anuncio["valor_anuncio"]."</h2>
+                </div>
+                <div class='h-20 overflow-hidden'><h2 class='p-5 text-lg font-semibold'>R$ ".$anuncio["valor_anuncio"]."</h2></div>
                 <div class='h-40 mb-5 overflow-hidden'><p class='font-light text-lg p-5'>".$anuncio["descricao_anuncio"]."</p></div>
                 <a href='anuncioDetalhado.php?id=".$anuncio['id_anuncio']."' class='w-40 p-1.5 m-8 text-white bg-gray-700 hover:bg-blue-500 rounded-2xl'>
                 <img src='public/img/favicon.png' class='w-9 inline-block' alt='Mais Detalhes'>
